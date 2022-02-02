@@ -1,11 +1,20 @@
 const express = require('express')
 const app = express()
-
-require("dotenv").config()
-
+const mysql = require('mysql')
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const nodemailer = require("nodemailer")
+
+const db = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "password",
+    database: "hs_portfolio"
+});
+
+require("dotenv").config()
+
+
 
 
 app.use(express.json());
@@ -24,7 +33,21 @@ const corsOptions = {
   app.use(cors(corsOptions));
 //   const port = process.env.PORT || 5000;
 
-  
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.post("/api/insert",(req, res) => { 
+
+    const workName = req.body.workName
+    const workReview = req.body.workReview
+
+    const sqlInsert = 
+    "INSERT INTO work_feedback (workName. workReview) VALUES (?,?)"
+    db.query(sqlInsert, [workName, workReview], (err, result) => {
+        console.log(result)
+    })
+
+});
+
 app.get("/api", (req, res) => {
     res.json({"jobTypes": ["Radio", "Commercials", "Events"] })
 })

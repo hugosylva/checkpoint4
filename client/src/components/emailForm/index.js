@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axios from "axios";
+import Axios from "axios";
 
 function Email() {
 
@@ -9,7 +9,7 @@ function Email() {
     const handleSend = async() => {
         setSent(true)
         try{
-            await axios.post("http://localhost:5000/send_mail", {text})
+            await Axios.post("http://localhost:5000/send_mail", {text})
         } catch (error) {
             console.log(error)
                 
