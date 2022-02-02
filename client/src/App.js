@@ -1,5 +1,6 @@
 
 import React, {useEffect, useState} from 'react';
+import Email from './components/emailForm';
 
 function App() {
 
@@ -33,6 +34,10 @@ console.log(backendData)
 
 
   return (
+  <>
+
+  
+
   <div>
 
 
@@ -46,6 +51,11 @@ console.log(backendData)
 
 
   </div>
+
+  <Email />
+
+
+</>
   );
   
 
