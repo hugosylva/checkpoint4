@@ -1,0 +1,16 @@
+.email-handler{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30vh;
+    padding-left: 10vw;
+}
+
+
+.footer-contact{
+   color : rgb(252, 252, 252);
+}
+
+
+.contact-form{
+    display: flex;
+}

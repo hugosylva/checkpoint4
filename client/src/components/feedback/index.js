@@ -18,7 +18,7 @@ function Feedback() {
     }
 return(
 <>
-<h1> Your Feedback </h1>
+<h2> Your Feedback </h2>
 
 <div>
 <lable> Work Name </lable>

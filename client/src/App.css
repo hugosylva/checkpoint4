@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+
+
+  .job-types{
+    font-weight: 700;
+    color: aliceblue;
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    padding: 10px;
+  }

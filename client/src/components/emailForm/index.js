@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Axios from "axios";
+import "./style.css";
 
 function Email() {
 
@@ -19,10 +20,16 @@ function Email() {
 
 return(
 <>
+<div className="email-handler">
+    
+<div className="footer-contact">
+        <h3>Contact me</h3>
+        <p>And let's get down to work</p> 
+</div>
 
 {!sent ?(
 
-<form onSubmit={handleSend}>
+<form className="contact-form" onSubmit={handleSend}>
     <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
 
     <button tyoe="submit">Send email</button>
@@ -35,7 +42,7 @@ return(
 )
 }
 
-
+</div>
 </>
 )
 }

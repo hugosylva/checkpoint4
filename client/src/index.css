@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.job-types{
+  font-weight: 700;
+  color: aliceblue;
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+}
