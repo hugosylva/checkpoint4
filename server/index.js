@@ -4,11 +4,12 @@ const mysql = require('mysql')
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const nodemailer = require("nodemailer")
+const Joi = require ('joi');
 
 const db = mysql.createPool({
-    host: "localhost",
     user: "root",
-    password: "password",
+    host: "localhost",
+    password: "Pandeiretas0212",
     database: "hs_portfolio"
 });
 
@@ -18,15 +19,16 @@ require("dotenv").config()
 
 
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(cors());
 
 
 
 const corsOptions = {
     origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT"],
-    credentials: true, //access-control-allow-credentials:true
+    credentials: true,
     optionSuccessStatus: 200,
   };
   
@@ -34,6 +36,68 @@ const corsOptions = {
 //   const port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: true}))
+
+app.post('/register', (req, res) => {
+
+    const username = req.body.username
+    const password = req.body.password
+
+
+    db.query(
+    "INSERT INTO users (username, password) VALUES (?,?)", 
+    [username, password],
+    (err, result) => {
+        console.log(err);
+    });
+});
+
+app.post ('/login', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+
+
+    db.query(
+    "SELECT * FROM users WHERE username = ? AND password = ?", 
+    [username, password],
+    (err, result) => {
+       if (err) {
+           res.send({err: err});
+       }
+        if (result) {
+             res.send(resut)
+         } else {
+             res.send({message: "Wrong Username and/or Password"})
+         }
+       }
+    );
+
+})
+
+
+// app.get('/',(req,res)=>{
+//     res.sendFile(path.join(__dirname,'static','index.html'));
+// });
+
+// app.post('/',(req,res)=>{
+//     console.log(req.body);
+//     const schema = Joi.object().keys({
+//         email : Joi.string().trim().email().required(),
+//         password: Joi.string().min(5).max(10).required()
+//     });
+//     Joi.validate(req.body,schema,(err,result)=>{
+//         if(err){
+//             console.log(err);
+//             res.send('an error has occurred');
+//         }
+//         else{
+//             console.log(result);
+//             res.send('successfully posted data');
+//         }
+        
+//     })
+    
+// });
+
 
 app.post("/api/insert",(req, res) => { 
 

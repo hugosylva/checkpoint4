@@ -1,14 +1,21 @@
 .email-handler{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30vh;
+    margin-bottom: 10vh;
     padding-left: 10vw;
+    padding-bottom: 1vh;
 }
 
 
 .footer-contact{
    color : rgb(252, 252, 252);
 }
+
+
+
+.footer-contact-thks{
+    color : rgba(255, 255, 255, 0.548);
+ }
 
 
 .contact-form{

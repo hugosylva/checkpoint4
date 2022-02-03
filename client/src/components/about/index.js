@@ -9,10 +9,18 @@ const About = () => {
       <div className="about-desc">
         <h3>Let me tell you something about me</h3>
         <p className="">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-          provident inventore quod voluptates sequi. Quis, necessitatibus omnis
-          iusto perferendis dolores voluptate et dolorum inventore autem nemo,
-          quos eveniet magni nesciunt.
+          I'm a professional with over 10 years experience
+          in broadcasting, voice-over, and bringing to life
+          any kind of content.
+
+          I've worked in radio stations, I've gave voice to 
+          animation characters, I've been the voice of many
+          institutional and educational videos.
+
+          On this page, you'll find some of my work.
+          </p>
+          <p>
+        My name is Hugo Silva... and this is my voice! 
         </p>
       </div>
       <div className="about-img">

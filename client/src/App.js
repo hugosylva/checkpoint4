@@ -60,7 +60,7 @@ console.log(backendData)
   return (
   <>
 {/* <Router> */}
-<Navbar isScrolling={scrollHeight} />
+
 
 <div className='job-types'>
 {(typeof backendData.jobTypes === 'undefined') ? (

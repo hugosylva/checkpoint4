@@ -38,7 +38,7 @@ return(
 
 ) : (
 
-    <h2> Thank you for your contact! </h2>
+    <h2 className="footer-contact-thks"> Thank you for your contact! </h2>
 )
 }
 

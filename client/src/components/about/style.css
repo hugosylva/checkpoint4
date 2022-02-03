@@ -33,6 +33,8 @@
   .profile-pic{
     display: flex;
     width: 100%;
+    padding-left: 15vw;
+    overflow: none;
   }
   
   @media only screen and (max-width: 960px) {

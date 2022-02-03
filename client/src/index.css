@@ -12,10 +12,4 @@ code {
     monospace;
 }
 
-.job-types{
-  font-weight: 700;
-  color: aliceblue;
-  display: flex;
-  width: 100vw;
-  justify-content: space-around;
-}
+
